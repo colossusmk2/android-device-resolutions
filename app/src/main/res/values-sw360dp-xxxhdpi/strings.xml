@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestResolution</string>
+    <string name="post_fix">i am 360</string>
+    <string name="format">sw%sdp-%s</string>
+</resources>

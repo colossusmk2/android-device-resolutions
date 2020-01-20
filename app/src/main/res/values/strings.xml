@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Device Resolution</string>
+    <string name="post_fix">i am default</string>
+    <string name="format">sw%sdp-%s</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TestResolution</string>
+    <string name="post_fix">i am xxx</string>
+    <string name="format">%s * %s %s %s %s</string>
+</resources>
