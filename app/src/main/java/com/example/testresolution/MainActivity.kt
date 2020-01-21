@@ -14,35 +14,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
-        val density = resources.displayMetrics.density.toString()
+        val density = resources.displayMetrics.density
         val config: Configuration = resources.configuration
         val densityDPI = config.smallestScreenWidthDp
         test_view.text = getString(R.string.format, densityDPI.toString(), getDensity(density))
     }
 
-    fun getDensity(density: String): String {
-        when (density) {
-            "0.75" -> {
-                return "ldpi"
-            }
-            "1.0" -> {
-                return "mdpi"
-            }
-            "1.5" -> {
-                return "hdpi"
-            }
-            "2.0" -> {
-                return "xhdpi"
-            }
-            "3.0" -> {
-                return "xxhdpi"
-            }
-            "4.0" -> {
-                return "xxxhdpi"
-            }
-            else -> {
-                return "undefined"
-            }
+    private fun getDensity(density: Float): String {
+        if(density <= 0.75) {
+            return "ldpi"
+        } else if(density > 0.75 && density <= 1.0) {
+            return "mdpi"
+        } else if(density > 1.0 && density <= 1.5) {
+            return "hdpi"
+        } else if(density > 1.5 && density <= 2.0) {
+            return "xhdpi"
+        } else if(density > 2.0 && density <= 3.0) {
+            return "xxhdpi"
+        } else if(density > 3.0 && density <= 4.0) {
+            return "xxxhdpi"
+        } else {
+            return density.toString()
         }
     }
 }
